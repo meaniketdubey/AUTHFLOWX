@@ -1,10 +1,15 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import sessionmaker
+import os
 
-from app.core.config import settings
 
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "DATABASE_URL=postgresql+psycopg2://postgres:postgres@authflowx_db:5432/authflowx"
+)
 
-engine = create_engine(settings.DATABASE_URL)
+engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(
     autocommit=False,
