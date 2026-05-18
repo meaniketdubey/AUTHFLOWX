@@ -9,6 +9,9 @@ DATABASE_URL = os.getenv(
     "DATABASE_URL=postgresql+psycopg2://postgres:postgres@authflowx_db:5432/authflowx"
 )
 
+
+
+
 engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(

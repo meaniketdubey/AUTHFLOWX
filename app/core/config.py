@@ -9,9 +9,13 @@ class Settings(BaseSettings):
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
 
-    model_config = ConfigDict(
-        env_file=".env"
-    )
+
+    redis_host: str = "localhost"
+    redis_port: int = 6379
+
+    class Config:
+        extra = "ignore" 
+
 
 
 settings = Settings()
