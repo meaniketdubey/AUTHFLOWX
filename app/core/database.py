@@ -6,7 +6,7 @@ import os
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "DATABASE_URL=postgresql+psycopg2://postgres:postgres@authflowx_db:5432/authflowx"
+    "DATABASE_URL=postgresql://authflowx_db_user:B5xTIIuBiilPo6XpHMvqGRVbLexI3tvx@dpg-d85m3amq1p3s738eg3f0-a/authflowx_db"
 )
 
 
