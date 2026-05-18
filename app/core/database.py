@@ -5,7 +5,6 @@ from app.core.config import settings
 
 import os
 
-Base.metadata.create_all(bind=engine)
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
@@ -20,6 +19,8 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
+
+Base.metadata.create_all(bind=engine)
 
 
 def get_db():
