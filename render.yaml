@@ -13,10 +13,16 @@ services:
       - key: SECRET_KEY
         generateValue: true
 
+      - key: ALGORITHM
+        value: HS256
+
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "30"
+
       - key: REDIS_URL
         fromService:
-          name: authflowx-redis
           type: redis
+          name: authflowx-redis
           property: connectionString
 
 databases:
