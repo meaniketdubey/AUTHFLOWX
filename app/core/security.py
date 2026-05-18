@@ -17,6 +17,9 @@ from app.core.database import get_db
 from app.models.user import User
 
 import uuid
+import os
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 security = HTTPBearer()
 
@@ -25,7 +28,7 @@ load_dotenv()
 
 from app.core.config import settings
 
-SECRET_KEY = settings.SECRET_KEY
+# SECRET_KEY = settings.SECRET_KEY
 ALGORITHM = settings.ALGORITHM
 
 # Access Token Expiry
