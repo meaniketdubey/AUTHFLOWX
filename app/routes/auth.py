@@ -292,7 +292,7 @@ def revoke_all_sessions(
 from app.core.redis import redis_client
 
 
-@router.get("/redis-test")
+@app.get("/redis-test")
 def redis_test():
 
     redis_client.set("message", "Redis is working")

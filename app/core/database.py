@@ -5,6 +5,8 @@ from app.core.config import settings
 
 import os
 
+Base.metadata.create_all(bind=engine)
+
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
     "postgresql://postgres:postgres@db:5432/authflowx"
