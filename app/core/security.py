@@ -23,10 +23,10 @@ security = HTTPBearer()
 
 load_dotenv()
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+from app.core.config import settings
 
-# JWT Algorithm
-ALGORITHM = "HS256"
+SECRET_KEY = settings.SECRET_KEY
+ALGORITHM = settings.ALGORITHM
 
 # Access Token Expiry
 ACCESS_TOKEN_EXPIRE_MINUTES = 30

@@ -288,3 +288,17 @@ def revoke_all_sessions(
     return {
         "message": "All sessions revoked"
     }
+
+from app.core.redis import redis_client
+
+
+@router.get("/redis-test")
+def redis_test():
+
+    redis_client.set("message", "Redis is working")
+
+    value = redis_client.get("message")
+
+    return {
+        "redis_value": value
+    }
